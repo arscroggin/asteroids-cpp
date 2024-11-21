@@ -3,6 +3,7 @@
 #include "main.h"
 #include "asteroid.h"
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -27,6 +28,11 @@ int main()
 		string id = std::to_string(asteroid.getId());
 		cout << "Asteroid ID is: " + id << endl;
 	}
+
+	asteroid1->move(3, 2);
+	asteroid1->move(3, 2);
+
+	cout << "Asteroid 1 location is X: " << asteroid1->getX() << " Y: " << asteroid1->getY() << endl;
 
 	return 0;
 }

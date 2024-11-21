@@ -18,6 +18,7 @@ public:
     int getX() const;
     int getY() const;
     int getId() const;
+    void move(int deltaX, int deltaY);
 
 };
 
