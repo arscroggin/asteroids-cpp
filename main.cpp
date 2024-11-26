@@ -3,6 +3,7 @@
 #include "main.h"
 #include "board.h"
 #include "asteroid.h"
+#include "game_manager.h"
 #include <vector>
 #include <algorithm>
 #include <map>
@@ -11,13 +12,13 @@ using namespace std;
 
 void printSizeOfTypes();
 void testFunction();
-void startGame();
 
 
 
 int main()
 {
-	startGame();
+	unique_ptr<GameManager> gameManagerPtr(new GameManager());
+	gameManagerPtr->StartGame();
 
 	auto asteroid1 = new Asteroid();
 	auto asteroid2 = new Asteroid();
@@ -25,8 +26,7 @@ int main()
 	unique_ptr<Asteroid> asteroid3(new Asteroid());
 
 
-	unique_ptr<Board> board(new Board());
-	board->PrintBoard();
+
 
 	vector<Asteroid> asteroids;
 	asteroids.push_back(*asteroid1);
@@ -68,34 +68,5 @@ void testFunction()
 	for (auto& person : *myMap)
 	{
 		cout << "Name is: " << person.second << endl;
-	}
-
-
-}
-
-void startGame()
-{
-	string inputLine;
-	bool badInput = true;
-	int numberOfPlayers = 1;
-
-	cout << "Hello, Welcome to Asteroids!!!" << endl;
-
-
-	while (badInput)
-	{
-		cout << "How many players? Enter 1 or 2" << endl;
-		getline(cin, inputLine);
-
-		if (inputLine == "1")
-		{
-			badInput = false;
-			numberOfPlayers = 1;
-		}
-		else if (inputLine == "2")
-		{
-			badInput = false;
-			numberOfPlayers = 2;
-		}
 	}
 }
