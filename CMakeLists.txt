@@ -12,7 +12,7 @@ endif()
 project ("asteroids-cpp")
 
 # Add source to this project's executable.
-add_executable (asteroids-cpp "main.cpp" "main.h" "asteroid.cpp" "asteroid.h")
+add_executable (asteroids-cpp "main.cpp" "main.h" "asteroid.cpp" "asteroid.h" "board.cpp" "board.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET asteroids-cpp PROPERTY CXX_STANDARD 20)
