@@ -1,6 +1,7 @@
 ﻿//
 
 #include "main.h"
+#include "board.h"
 #include "asteroid.h"
 #include <vector>
 #include <algorithm>
@@ -24,6 +25,8 @@ int main()
 	unique_ptr<Asteroid> asteroid3(new Asteroid());
 
 
+	unique_ptr<Board> board(new Board());
+	board->PrintBoard();
 
 	vector<Asteroid> asteroids;
 	asteroids.push_back(*asteroid1);
